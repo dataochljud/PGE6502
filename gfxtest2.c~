@@ -1,0 +1,20 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <stdint.h>
+#include <atari.h>
+
+int init_gfx();
+
+int main()
+{
+  
+
+  return 0;
+}
+
+int init_gfx()
+{
+  void 
+
+  return 0;
+}

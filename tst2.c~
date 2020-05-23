@@ -1,0 +1,35 @@
+#include <atari.h>
+
+int main() {
+  unsigned char ScreenMemory[4096];
+  void DisplayList =
+    {
+      DL_BLK8,
+      DL_LMS(DL_CHR8x8x2),
+      ScreenMemory,
+      DL_GRAPHICS7,
+      DL_GRAPHICS7,
+      DL_GRAPHICS7,
+      DL_GRAPHICS7,
+      DL_GRAPHICS7,
+      DL_GRAPHICS7,
+      DL_GRAPHICS7,
+      DL_GRAPHICS7,
+      DL_GRAPHICS7,
+      DL_GRAPHICS7,
+      DL_GRAPHICS7,
+      DL_GRAPHICS7,
+      DL_GRAPHICS7,
+      DL_GRAPHICS7,
+      DL_GRAPHICS7,
+      DL_GRAPHICS7,
+      DL_GRAPHICS7,
+      DL_GRAPHICS7,
+      DL_JVB,
+      &DisplayList
+    };
+  OS.sdlst = &DisplayList;
+  ScreenMemory = "Testy!";
+  while (1) { }
+  return 0;
+}
