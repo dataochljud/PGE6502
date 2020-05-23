@@ -248,13 +248,13 @@ screenptr += x << 2;
 	  x2 = tmpx;
 	  y2 = tmpy;
 	}
-	px  = x1 % 4;
-	px2 = x2 % 4;
+	xp  = x1 % 4;
+	xp2 = x2 % 4;
 	screenptr += y1 * 40 + (x1 >> 2);
 	d   = (c << 6) | (c << 4) | (c << 2) | c;
 	d2  = d1 = d;
-	d1  &= (0xff >> (px * 2));
-	d2 &= (0xff << (8 - px2 *2));
+	d1  &= (0xff >> (xp * 2));
+	d2 &= (0xff << (8 - xp2 *2));
 	*screenptr++ = d1;
 	for (i=0; i < ((x2-x1) % 4); i++) {
 	  *(screenptr++) = d;
