@@ -10,9 +10,9 @@ void drawLine(int x1, int y1, int x2, int y2, char c);
 int main() {
   unsigned char *ip;
   int i,j;
-  char c[ ] ="PixelGameEngine_2.0";
-  unsigned char DisplayList[150] = {DL_BLK8,
-      DL_LMS(DL_CHR20x8x2),
+  char c[ ] =" PixelGameEngine 2.0 ";
+  unsigned char DisplayList[150] = {DL_BLK8,DL_BLK8,
+      DL_LMS(DL_CHR20x16x2),
       0x00,0x60,
       DL_GRAPHICS7,
       DL_GRAPHICS7,
@@ -146,8 +146,8 @@ int main() {
       DL_JVB,00,00,
     };
  
-  DisplayList[138] = ((char)&DisplayList & 0x00ff);
-  DisplayList[139] = ((char)&DisplayList >> 8);
+  DisplayList[139] = ((char)&DisplayList & 0x00ff);
+  DisplayList[140] = ((char)&DisplayList >> 8);
   
   /* ip=0x6000;
   for (i=0x6000; i < 0xd000;i++) {
@@ -159,7 +159,7 @@ int main() {
     *(ip++) = 65;
   }
   ip=0x6000;
-  for (i=0; i < strlen(c); i++) {
+  for (i=0; i < 20; i++) {
     *(ip++)=c[i];
   }
   while (1) {
